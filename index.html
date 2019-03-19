@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shower Presentation Engine</title>
+    <title>Accessibility for Developers</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="node_modules/shower-material/styles/styles.css">
     <style>
         .shower {
             --slide-ratio: calc(16 / 9);
@@ -14,91 +14,558 @@
 <body class="shower list">
 
     <header class="caption">
-        <h1>Shower Presentation Engine</h1>
-        <p>Yours Truly, Famous Inc.</p>
+        <h1>Accessibility for Developers</h1>
     </header>
 
     <section class="slide" id="cover">
-        <h2>Shower Presentation Engine</h2>
-        <p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-        <figure>
-            <img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-            <figcaption class="copyright right white">
-                <a href="http://fiftyfootshadows.net/">© John Carey</a>
-            </figcaption>
-        </figure>
+        <h2 class="place center">Accessibility for Developers</h2>
         <style>
+            #cover {
+                background: var(--color-key);
+            }
             #cover h2 {
-                margin: 30px 0 0;
-                color: white;
                 text-align: center;
-                font-size: 70px;
+                width: 100%;
             }
-
-            #cover p {
-                margin: 10px 0 0;
+            .slide.sectiontitle h2 {
+                color: #9A1E42;
+                border-bottom: 6px solid;
+                padding-bottom: 0.25em;
                 text-align: center;
-                color: white;
-                font-style: italic;
-                font-size: 20px;
-            }
-
-            #cover p a {
-                color: white;
             }
         </style>
+        <img src="pictures/fable-logo-red.png" alt="Fable Tech Labs" class="place top left" width="200" style="margin-left: 80px; margin-top: 60px" />
+        <img src="pictures/city-key-background.png" class="cover" style="width:100%" alt="" role="presentation" />
+    </section>
+
+    <section id="about" class="slide">
+		<h2>About me</h2>
+		<ul>
+			<li>Self-taught dev, started in 2003</li>
+			<li>Experience mostly with financial clients</li>
+			<li>Focused on accessibility (IAAP CPWA)</li>
+            <li>Lead developer at Fable Tech Labs</li>
+		</ul>
+        <img class="place right" src="pictures/perry-square.jpg" alt="Perry Trinier" width=300>
     </section>
 
     <section class="slide">
-        <h2>Shower key features</h2>
-        <ol>
-            <li>Built on HTML, CSS and JavaScript</li>
-            <li>Works in all modern browsers</li>
-            <li>Themes are separated from engine</li>
-            <li>Fully keyboard accessible</li>
-            <li>Printable to PDF</li>
-        </ol>
-        <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+        <iframe src="https://player.vimeo.com/video/310390757?autoplay=0&api=1&player_id=player_1&wmode=opaque" allowfullscreen="" id="player_1" name="fitvid0" class="cover" style="height: 90%; width: 90%; border: 0;"></iframe>
     </section>
 
     <section class="slide">
-        <h2>Plain text on your slides</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+        <h2>Overview</h2>
+        <ul>
+            <li>Building empathy</li>
+            <li>Accessibility fundamentals</li>
+            <li>Development habits for accessibility</li>
+        </ul>
+    </section>
+
+    <section class="slide sectiontitle">
+        <h2 class="place center">Building empathy</h2>
+        <img src="https://www.workwithfable.com/beta/img/oaks-small.png" alt="" role="presentation" class="place bottom right" style="margin-right:30px" />
     </section>
 
     <section class="slide">
-        <h2>Two columns if you like</h2>
-        <div class="columns two">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-        </div>
+        <h2>Diverse abilities</h2>
+        <ul>
+            <li>People have diverse abilities, skills, tools, preferences, and expectations that can impact how they use the Web</li>
+            <li>Many reasons why people may experience varying degrees of auditory, cognitive, physical, speech, and visual disabilities</li>
+            <li>May have disabilities from birth, an illness, disease, or accident, or develop impairments with age</li>
+        </ul>
+        <small class="place bottom left">Source: <a href="https://www.w3.org/WAI/people-use-web/abilities-barriers/">W3C Web Accessibility Initiative: Diverse Abilities and Barriers</a></small>
     </section>
 
     <section class="slide">
-        <h2>All kind of lists</h2>
-        <ol>
-            <li>Simple lists are marked with bullets</li>
-            <li>Ordered lists begin with a number</li>
-            <li>You can even nest lists one inside another
+        <h2>The ability spectrum</h2>
+        <p>
+        <img src="pictures/inclusive-design-spectrum.png" alt="Microsoft Inclusive Design infographic illustrating the concept of permanent, temporary and situational disabilities" style="float:left; margin-right: 14px" height="400">
+        By designing for someone with a permanent disability, someone with a situational limitation can also benefit.
+        <br>
+        For example, a device designed for a person who has one arm could be used just as effectively by a person with a temporary wrist injury or a new parent holding an infant. 
+        </p>
+        <small>Source: <a href="https://www.microsoft.com/en-us/design/inclusive">Microsoft Inclusive Design Toolkit</a></small>
+    </section>
+
+    <section class="slide">
+        <h2>Models of disability</h2>
+        <ul>
+            <li>Medical
                 <ul>
-                    <li>Or mix their types</li>
-                    <li>But do not go too far</li>
-                    <li>Otherwise audience will be bored</li>
+                    <li>Individual level, sees disability as deficient/defective aspect</li>
                 </ul>
             </li>
-            <li>Look, seven rows exactly!</li>
-        </ol>
+            <li>Social
+                <ul>
+                    <li>Sees disability as part of diverse experience of humanity which can be accounted for by society and technology</li>
+                </ul>
+            </li>
+        </ul>
     </section>
 
     <section class="slide">
-        <h2>Serious citations</h2>
+        <h2>Social model of disability</h2>
+        <ul>
+            <li>
+                Identifies systemic barriers, negative attitudes and exclusion by society (purposely or inadvertently)
+            </li>
+            <li>
+                Individual limitations or impairments do not have to lead to disability
+            </li>
+            <li>
+                Social model focuses on changes required in society
+            </li>
+            <li>
+                People can <strong>be disabled</strong> by a lack of resources to meet their needs
+            </li>
+        </ul>
+        <small class="place bottom left">Source: <a href="https://en.wikipedia.org/wiki/Social_model_of_disability">Wikipedia - Social model of disability</a></small>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/WHO-social-model.png" class="cover" alt="" />
+    </section>
+
+    <section class="slide">
         <figure>
             <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+                <p>
+                Someone in a wheelchair has difficulty walking at the very least. No one disputes that. 
+                </p>
+                <p>
+                But someone in a wheelchair is not actually disabled until faced with a flight of stairs. 
+                </p>
+                <p>
+                The person isn’t disabled; the conditions are disabling. 
+                </p>
             </blockquote>
-            <figcaption>Marcus Tullius Cicero</figcaption>
+            <figcaption>John Williams</figcaption>
         </figure>
+        <small class="place bottom left">Source: <a href="https://www.insidenewcity.com/blog/view/what-responsive-design-can-teach-us-about-accessibility">What responsive design can teach us about accessibility</a></small>
     </section>
+
+    <section class="slide">
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9s3NZaLhcc4?controls=0&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="cover" style="height: 90%; width: 90%; border: 0;"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2>Impact of web accessibility</h2>
+        <ul>
+            <li>
+                The Web is part of the solution to improving access to information and services for people with disabilities, as well as overall equity in society
+            </li>
+            <li>
+                An accessible Web expands opportunities for communication, social interaction, and community participation for people with disabilities and people with age-related or other impairments.
+            </li>
+            <li>
+                <strong>The technology exists</strong> to remove online barriers – WCAG, other web standards, vendor software built to W3C specifications
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <blockquote>
+                <p>
+                If a blind person comes to our web site and cannot navigate it, it is not because they are disabled;<br> 
+                it is because <strong>we disabled them</strong> by not providing them an interface they could use.
+                </p>
+            </blockquote>
+            <figcaption>John Williams</figcaption>
+        </figure>
+        <small class="place bottom left">Source: <a href="https://www.insidenewcity.com/blog/view/what-responsive-design-can-teach-us-about-accessibility">What responsive design can teach us about accessibility</a></small>
+    </section>
+
+    <section class="slide">
+        <h2>Barriers on the web</h2>
+        <ul>
+            <li>Images, controls, and other structural elements that do not have equivalent text alternatives</li>
+            <li>Not providing full keyboard support</li>
+            <li>Unpredictable focus handling</li>
+            <li>Low contrast</li>
+            <li>Relying on colour or position to communicate information</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <a href="https://vimeo.com/299925358/417247429b#t=2m10s">Sam demonstrates some accessibility issues</a>
+    </section>
+
+    <section class="slide sectiontitle">
+        <h2 class="place center">Accessibility fundamentals</h2>
+        <img src="https://www.workwithfable.com/beta/img/oaks-small.png" alt="" role="presentation" class="place bottom right" style="margin-right:30px" />
+    </section>
+
+    <section class="slide">
+		<figure>
+			<blockquote>
+                <p>
+                The power of the Web is in its universality. 
+                <br>
+                Access by everyone regardless of disability <br>is an essential aspect.
+                </p>
+			</blockquote>
+            <figcaption>Sir Tim Berners-Lee</figcaption>
+		</figure>
+    </section>
+
+    <section class="slide">
+        <h2>W3C Web Accessibility Initiative</h2>
+        <ul>
+            <li>Accessibility is a first-class citizen of W3C web standards</li>
+            <li>Accessibility Initiative produces specifications for web content, user agents, and authoring tools</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>WCAG Principles</h2>
+        <p>
+        Anyone who wants to use the Web must have content that is:
+        </p>
+        <ul>
+            <li>
+                <strong>Perceivable</strong><br>Information and user interface components must be presentable to users in ways they can perceive.
+            </li>
+            <li>
+                <strong>Operable</strong><br>User interface components and navigation must be operable.
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>WCAG Principles</h2>
+        <ul>
+            <li><strong>Understandable</strong><br>Information and the operation of user interface must be understandable.</li>
+            <li><strong>Robust</strong><br>Content must be robust enough that it can be interpreted reliably by a wide variety of user agents and AT.</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Perceivable</h2>
+        <ul>
+            <li>
+                Provide <strong>text alternatives</strong> for non-text content.
+            </li>
+            <li>
+                Provide <strong>captions and other alternatives</strong> for multimedia.
+            </li>
+            <li>
+                Create content that can be <strong>presented in different ways</strong>, including by assistive technologies, without losing meaning.
+            </li>
+            <li>
+                Make it easier for users to <strong>see and hear content</strong>.
+            </li>
+        </ul>
+        <small class="place bottom left">Source: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/glance/">WCAG 2.1 at a Glance</a></small>
+    </section>
+
+    <section class="slide">
+        <h2>Operable</h2>
+        <ul>
+            <li>
+                Make all functionality available from a <strong>keyboard</strong>.
+            </li>
+            <li>
+                Give users <strong>enough time</strong> to read and use content.
+            </li>
+            <li>
+                Do not use content that causes <strong>seizures</strong>.
+            </li>
+            <li>
+                Help users <strong>navigate and find content</strong>.
+            </li>
+        </ul>
+        <small class="place bottom left">Source: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/glance/">WCAG 2.1 at a Glance</a></small>
+    </section>
+    
+    <section class="slide">
+        <h2>Understandable</h2>
+        <ul>
+            <li>
+                Make text <strong>readable and understandable</strong>.
+            </li>
+            <li>
+                Make content appear and operate in <strong>predictable</strong> ways.
+            </li>
+            <li>
+                Help users <strong>avoid and correct mistakes</strong>.
+            </li>
+        </ul>
+        <small class="place bottom left">Source: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/glance/">WCAG 2.1 at a Glance</a></small>
+    </section>
+
+    <section class="slide">
+        <h2>Robust</h2>
+        <ul>
+            <li>
+                Maximize <strong>compatibility</strong> with current and future user tools.
+            </li>
+        </ul>
+        <small class="place bottom left">Source: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/glance/">WCAG 2.1 at a Glance</a></small>
+    </section>
+
+    <section class="slide sectiontitle">
+        <h2>Development habits for accessibility</h2>
+        <img class="place bottom right" src="pictures/fable-rocketship.png" role="presentation" alt="" />
+    </section>
+
+    <section id="unclesam" class="slide">
+        <img class="cover" src="pictures/uncle-sam-accessibility.jpg" alt="Recruitment poster of Uncle Sam, caption: I want you - to prevent accessibility barriers">
+    </section>
+
+    <section class="slide">
+        <h2>Always be testing!</h2>
+        <ul>
+            <li>Demo: Axe and WAVE browser extensions</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Accessibility tree</h2>
+        <ul>
+            <li>
+                Browser accessibility tree is a subset of the DOM
+            </li>
+            <li>
+                Browser uses defined algorithms to determine accessible name and properties/state of element
+            </li>
+            <li>
+                Browser communicates accessibility tree to the OS accessibility API
+            </li>
+        </ul>
+        <img src="pictures/accessibility-tree.png" alt="High-level diagram illustrating interaction of browsers and assistive technology" height="160">
+        <small class="place bottom left">Source: <a href="http://wicg.github.io/aom/explainer.html#background-assistive-technology-and-the-accessibility-tree">Assistive Technology and the Accessibility Tree</a></small>
+    </section>
+
+    <section class="slide">
+        <h2>Demo: Accessibility inspectors</h2>
+        <ul>
+            <li>Accessibility inspector (Chrome)</li>
+            <li>Accessibility inspector (Firefox)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Writing accessible code</h2>
+        <ul>
+            <li>
+                Make it keyboardable
+            </li>
+            <li>
+                Use semantic HTML
+            </li>
+            <li>
+                Ensure all content is perceivable
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Make it keyboardable</h2>
+        <ul>
+            <li>
+                Ensure that you can tell which element has keyboard focus
+            </li>
+            <li>
+                Keyboard navigation order should be logical and intuitive
+            </li>
+            <li>
+                All functionality must be available to the keyboard
+                <ul>
+                    <li>Following ARIA interaction guides if applicable</li>
+                </ul>
+            </li>
+            <li>
+                Users should be able to tab into and out of any UI element
+                <ul>
+                    <li>
+                        With the exception of intentional tab trapping for modal dialogs
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Use semantic HTML</h2>
+        <ul>
+            <li>All structure and informative content is provided through HTML</li>
+            <li>Semantic HTML and landmark roles are used to structure HTML elements
+                <ul>
+                    <li>Used by screen readers for navigation</li>
+                </ul>
+            </li>
+            <li>Elements that visually look like headings are marked up as such</li>
+            <li>Ensure that images have alt text, except decorative images which should have role="presentation" and empty alt text</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Ensure all content is perceivable</h2>
+        <ul>
+            <li>
+                Programmatic associations are provided for form controls and labels
+            </li>
+            <li>
+                Invalid fields need to use aria-invalid
+            </li>
+            <li>
+                Required fields need to use aria-required
+            </li>
+            <li>
+                Information &amp; instructions are programmatically conveyed to AT
+                <ul>
+                    <li>
+                        e.g. using aria-describedby
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Dynamic page updates need to be communicated to screen readers
+                <ul>
+                    <li>
+                        e.g. focus is set to the error message or summary when errors are returned
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Demo: Dynamic updates</h2>
+        <ul>
+            <li>Demonstrate ARIA live region</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>What is ARIA?</h2>
+        <ul>
+            <li>Accessible Rich Internet Applications standard</li>
+            <li>Extends semantics beyond what is possible using native HTML</li>
+            <li>Allows content authors to modify the accessibility tree to augment and override native semantics</li>
+            <li>Provides screen reader users with more context and greater interactivity with content</li>
+            <li>Uses HTML attributes either directly in markup or added via JavaScript</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>What is ARIA?</h2>
+        <ul>
+            <li>ARIA has no effect on how elements are displayed or behave in browsers
+                <ul>
+                    <li>e.g. aria-expanded true/false does not expand/collapse elements, JavaScript and CSS need to do that</li>
+                </ul>
+            </li>
+            <li>
+                It doesn’t add functionality, only metadata about DOM elements
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>ARIA roles</h2>
+        <ul>
+            <li>
+                Provides information to AT about the identity of an element
+            </li>
+            <li>
+                Roles also determine which states and properties are allowed/valid
+            </li>
+            <li>
+                Types of role:
+                <ul>
+                    <li>
+                        Landmark e.g banner, contentinfo, navigation, search
+                    </li>
+                    <li>
+                        Widget e.g. tablist, tab, tabpanel, progressbar, slider, tooltip
+                    </li>
+                    <li>
+                        Document e.g. presentation, region, dialog
+                    </li>
+                </ul>
+            </li>
+            <li><strong>A role is a promise</strong> that content will behave according to ARIA guidelines</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>ARIA properties</h2>
+        <ul>
+            <li>Often describe relationships with other elements</li>
+            <li>Usually don't change once they're set</li>
+        </ul>
+        <h3>Examples:</h3>
+        <ul>
+            <li>aria-label</li>
+            <li>
+                aria-labelledby
+            </li>
+            <li>
+                aria-describedby
+            </li>
+            <li>
+                aria-controls
+            </li>
+        </ul>
+
+        <small class="place bottom left">Full list: https://www.w3.org/TR/aria-state/#state_prop_def</small>
+    </section>
+
+    <section class="slide">
+        <h2>ARIA states</h3>
+        <ul>
+            <li>Dynamic, typically updated with JavaScript</li>
+            <li>Reflect current values / state related to element</li>
+        </ul>
+        <h3>Examples:</h3>
+        <ul>
+            <li>aria-invalid</li>
+            <li>aria-selected</li>
+            <li>aria-expanded</li>
+            <li>aria-valuenow</li>
+        </ul>
+
+    </section>
+
+    <section class="slide">
+        <h2>Using ARIA</h2>
+        <ul>
+            <li>If you can use a native HTML element, then do so</li>
+            <li>Do not change native semantics e.g. &lt;h2 role="tab"&gt;</li>
+            <li>All interactive ARIA controls must be usable with the keyboard e.g. role="button"</li>
+            <li>Do not use role="presentation" or aria-hidden="true" on a visible, focusable element</li>
+            <li>All interactive elements must have an "accessible name"</li>
+        </ul>
+        <small>Source: https://www.w3.org/TR/aria-in-html/#notes2</small>
+    </section>
+
+    <section class="slide">
+        <h2>ARIA examples</h2>
+        <ul>
+            <li>
+                <a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">ARIA tabs example</a> 
+            </li>
+            <li>
+                <a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/disclosure/disclosure-faq.html">ARIA disclosure example</a>
+            </li>
+            <li>
+                <a href="https://online.citi.com/US/JRS/portal/template.do?ID=mortgage_check_application_status">Form validation</a> 
+            </li>
+        </ul>
+    </section>
+
+	<section class="slide" id="watson">
+        <h2>Please note:</h2>
+		<figure>
+			<blockquote>
+                <p>Accessibility doesn't have to be perfect, <br>it just needs to be a little bit better than yesterday.</p>
+			</blockquote>
+            <figcaption><a href="https://twitter.com/LeonieWatson">Léonie Watson</a></figcaption>
+		</figure>
+	</section>
 
     <section class="slide">
         <h2>Code samples</h2>
@@ -114,94 +581,53 @@
     </section>
 
     <section class="slide">
-        <h2>Even tables</h2>
+        <h2>Testing in VoiceOver</h2>
+        <small>VO key default is Control + Option</small>
         <table>
         <tr>
-            <th scope="col">Locavore</th>
-            <th>Umami</th>
-            <th>Helvetica</th>
-            <th>Vegan</th>
+            <th>Command</th>
+            <th>Shortcut</th>
         </tr>
         <tr>
-            <th scope="row">Fingerstache</th>
-            <td>Kale</td>
-            <td>Chips</td>
-            <td>Keytar</td>
+            <td>Start/stop VoiceOver</td>
+            <td>Cmd + F5</td>
         </tr>
         <tr>
-            <th scope="row">Sriracha</th>
-            <td>Gluten-free</td>
-            <td>Ennui</td>
-            <td>Keffiyeh</td>
+            <td>Start reading</td>
+            <td>VO + A</td>
         </tr>
         <tr>
-            <th scope="row">Thundercats</th>
-            <td>Jean</td>
-            <td>Shorts</td>
-            <td>Biodiesel</td>
+            <td>Stop reading</td>
+            <td>Control</td>
         </tr>
         <tr>
-            <th scope="row">Terry</th>
-            <td>Richardson</td>
-            <td>Swag</td>
-            <td>Blog</td>
+            <td>Next heading/link/table</td>
+            <td>VO + Cmd + H / L / T</td>
+        </tr>
+        <tr>
+            <td>Read next/previous item</td>
+            <td>VO + Right/Left arrow</td>
+        </tr>
+        <tr>
+            <td>Open rotor</td>
+            <td>VO + U</td>
         </tr>
         </table>
-        <p>It’s good to have information organized.</p>
-    </section>
-
-    <section class="slide" id="picture">
-        <h2>Pictures</h2>
-        <figure>
-            <img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-            <figcaption class="copyright right white">
-                <a href="http://fiftyfootshadows.net/">© John Carey</a>
-            </figcaption>
-        </figure>
-        <style>
-            #picture h2 {
-                color: white;
-            }
-        </style>
     </section>
 
     <section class="slide">
-        <h2 class="shout shrink">You can even shout this way</h2>
+        <h2>Resources</h2>
+        <ul class="columns two">
+            <li><a href="https://www.w3.org/WAI/tutorials/">WAI Tutorials</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility">MDN Accessibility</a></li>
+            <li><a href="https://www.slideshare.net/seankelly612/three-developer-behaviors-to-eliminate-85-percent-of-accessibility-defects-91706469">Three Developer behaviors ...</a></li>
+            <li><a href="https://www.24a11y.com/">24a11y</a></li>
+            <li><a href="https://www.inclusivedesign24.org/">Inclusive Design 24</a></li>
+            <li><a href="https://www.youtube.com/watch?v=Ag3DMNbL_ig&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g">a11ycasts</a></li>
+            <li><a href="https://github.com/joe-watkins/top-people-to-follow-in-web-accessibility">A11y on Twitter (Joe Watkins)</a></li>
+            <li><a href="https://github.com/mgifford/a11y-courses">A11y courses (Mike Gifford)</a></li>
+        </ul>
     </section>
-
-    <section class="slide">
-        <h2>Inner navigation</h2>
-        <ol>
-            <li>Lets you reveal list items one by one</li>
-            <li class="next">To keep some key points</li>
-            <li class="next">In secret from audience</li>
-            <li class="next">But it will work only once</li>
-            <li class="next">Nobody wants to see the same joke twice</li>
-        </ol>
-    </section>
-
-    <section class="slide" id="see-more">
-        <h2 class="shout">
-            <img src="pictures/logo.svg" alt="Shower logo">
-            <a href="https://github.com/shower/shower">See more on GitHub</a>
-        </h2>
-        <style>
-            #see-more h2 {
-                font-size: 100px
-            }
-
-            #see-more img {
-                width: 0.72em;
-                height: 0.72em;
-            }
-        </style>
-    </section>
-
-    <footer class="badge">
-        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
-    </footer>
-
-    <div class="progress"></div>
 
     <script src="shower/shower.min.js"></script>
     <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
